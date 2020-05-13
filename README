@@ -1,0 +1,56 @@
+%    extended Phase-amplitude coupling EEGLAB toolbox
+%
+%    Copyright (C) 2019 Gabriela Jurkiewicz
+%
+%    This program is free software: you can redistribute it and/or modify
+%    it under the terms of the GNU General Public License as published by
+%    the Free Software Foundation, either version 3 of the License, or
+%    (at your option) any later version.
+%
+%    This program is distributed in the hope that it will be useful,
+%    but WITHOUT ANY WARRANTY; without even the implied warranty of
+%    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+%    GNU General Public License for more details.
+%
+%    You should have received a copy of the GNU General Public License
+%    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+%
+%    Gabriela Jurkiewicz <gabriela.j.jurkiewicz@gmail.com>
+
+------------------------------------------------------------------------------------------------------------------------
+1. Authors and copyrights
+
+This EEGLAB plugin was written by Gabriela Jurkiewicz and published under the terms of the GNU General Public License 3.
+
+
+------------------------------------------------------------------------------------------------------------------------
+2. Appliance
+
+This software implements algorithm for detection of phase-amplitude cross-frequency coupling to be used in data analysis under EEGLAB toolbox. Program allows a user to perform calculations and indicate the path where the results will be saved. 
+
+------------------------------------------------------------------------------------------------------------------------
+3. Usage
+
+To use this software you need:
+- Matlab, version 2011a or newer
+- Eeglab, version 11_0_4_3b or newer
+
+To install this plugin you need to place its entire directory inside the eeglab-directory/plugins/,
+where eeglab-directory is a directory in which your eeglab is located.
+
+
+------------------------------------------------------------------------------------------------------------------------
+4. Functionalities
+
+After installation you should be able to locate this plugin in the eeglab main menu under Tools > extended Phase-Amplitude Coupling.
+This software for now consists of three functionalities:
+
+- extended Modulation Index - performs the extended Modulation Index analysis for a given data and saves the results in the localization indicated by the user. The results consists of images summarizing the analysis, MAT structure containing the results and MAT structure containing the configuration parameters. It requires several parameters as an input - check documentation for details. This procedure is also accessible by pop_eMI_calc.m - recommended.
+
+- Modulation Index - calculates the Modulation Index (Tort et al. 2010) for a given data and saves the results in the localization indicated by the user. The results consists of images summarizing the analysis, MAT structure containing the results and MAT structure containing the configuration parameters. It requires several parameters as an input - check documentation for details. This procedure is also accessible by pop_MI_calc.m - recommended.
+
+- direct PAC estimate - calculates the direct PAC estimate (Ozkurt and Schnitzler 2011) for a given data and saves the results in the localization indicated by the user. The results consists of images summarizing the analysis, MAT structure containing the results and MAT structure containing the configuration parameters. It requires several parameters as an input - check documentation for details. This procedure is also accessible by pop_dPAC_calc.m - recommended.
+
+There is an examplary program (Test.m) and data set (TestData.set) that show the results for simulated signal consisted of 6 Hz sinus with superimposed bursts of 77 Hz oscillation located just before the top of each sinus cycle with added white noise.
+
+More information about methods included in toolbox could be find in article .......
