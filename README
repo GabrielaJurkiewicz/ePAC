@@ -55,6 +55,6 @@ This software for now consists of three functionalities:
 
 - direct PAC estimate - calculates the direct PAC estimate (Ozkurt and Schnitzler 2011) for a given data and saves the results in the localization indicated by the user. The results consists of images summarizing the analysis, MAT structure containing the results and MAT structure containing the configuration parameters. It requires several parameters as an input - check documentation for details (pop_dPAC_calc.m). 
 
-There are examplary programs (Test_properPAC.m, Test_epiphenomenalPAC.m, Test_properPAC_inVivo.m) and datasets (Test_properPAC_1.set, Test_properPAC_2.set, Test_properPAC_inVivo.set, Test_epiphenomenalPAC_1a.set, Test_epiphenomenalPAC_1b.set, Test_epiphenomenalPAC_2a.set, Test_epiphenomenalPAC_2b.set) that show the results for artificial and in vivo data. More information on those examples inside examplary scripts.
+There are exemplary programs (Test_properPAC.m, Test_epiphenomenalPAC.m, Test_properPAC_inVivo.m) and datasets (Test_properPAC_1.set, Test_properPAC_2.set, Test_properPAC_inVivo.set, Test_epiphenomenalPAC_1a.set, Test_epiphenomenalPAC_1b.set, Test_epiphenomenalPAC_2a.set, Test_epiphenomenalPAC_2b.set) that show the results for artificial and in vivo data. More information on those examples inside exemplary scripts.
 
 More information about methods included in toolbox could be find in article .......
