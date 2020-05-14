@@ -39,6 +39,7 @@ function [] = run_continuous_MI(EEG,SignalA,SignalP,Epochs,fP_bins,fP,fA_bins,fA
         results.fA_bins = fA_bins;       
         
         %% -------------------- CALCULATE MODULATION INDEX -----------------------------
+        % based on Tort et al., J Neurophysiol 2010
         for i = 1:length(fP)
 
             theta = eegfilt(signalP,Fs,fP_bins(1,i),fP_bins(2,i));
@@ -63,7 +64,8 @@ function [] = run_continuous_MI(EEG,SignalA,SignalP,Epochs,fP_bins,fP,fA_bins,fA
             progressbar(i/length(fP)*100)
             
         end
-    
+        
+        %% -------------------- STATISTICS -----------------------------
         if plotWithMask
             MX = squeeze(max(max(surrogates,[],2),[],3));
             thresh = prctile(MX,pMI);

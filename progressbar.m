@@ -19,6 +19,7 @@
 
 function [] = progressbar(arg)
 
+% adapted from the function textprogressbar written by Paul Proteus (e-mail: proteus.paul (at) yahoo (dot) com)
 persistent buffer;
 strLength  = 5;
 strDotsMax = 100;

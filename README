@@ -21,7 +21,11 @@
 1. Authors and copyrights
 
 This EEGLAB plugin was written by Gabriela Jurkiewicz and published under the terms of the GNU General Public License 3.
-
+It includes files with different authorship stated in the headlines:
+- pinknoise.m
+- DataHash.m
+- tf_cwt.m
+- tf_morlet.m
 
 ------------------------------------------------------------------------------------------------------------------------
 2. Appliance

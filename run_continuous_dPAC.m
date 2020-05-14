@@ -39,6 +39,7 @@ function [] = run_continuous_dPAC(EEG,SignalA,SignalP,Epochs,fP_bins,fP,fA_bins,
         results.fA_bins = fA_bins;       
         
         %% -------------------- CALCULATE DIRECT PAC ESTIMATE -----------------------------
+        %   adapted from the code written by Tolga Ozkurt (Ozkurt and Schnitzler, 2011)
         for i = 1:length(fP)
 
             theta = eegfilt(signalP,Fs,fP_bins(1,i),fP_bins(2,i));       %Compute the low freq signal.
@@ -67,6 +68,7 @@ function [] = run_continuous_dPAC(EEG,SignalA,SignalP,Epochs,fP_bins,fP,fA_bins,
             
         end
 
+        %% -------------------- STATISTICS -----------------------------
         if plotWithMask
             MX = squeeze(max(max(surrogates,[],2),[],3));
             thresh = prctile(MX,pdPAC);

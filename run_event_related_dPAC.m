@@ -51,6 +51,7 @@ function [] = run_event_related_dPAC(EEG,SignalA,SignalP,Epochs,fP_bins,fP,fA_bi
     end
     
     %% -------------------- CALCULATE MODULATION INDEX -----------------------------
+    %   adapted from the code written by Tolga Ozkurt (Ozkurt and Schnitzler, 2011)
     for i = 1:length(fP)
         tmpP = Phase(i,:,Fs:size(Phase,3)-Fs-1);
         for j = 1:length(fA)
@@ -70,6 +71,7 @@ function [] = run_event_related_dPAC(EEG,SignalA,SignalP,Epochs,fP_bins,fP,fA_bi
         end
     end
     
+    %% -------------------- STATISTICS -----------------------------
     if plotWithMask
         MX = squeeze(max(max(surrogates,[],2),[],3));
         thresh = prctile(MX,pdPAC);

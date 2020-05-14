@@ -51,6 +51,7 @@ function [] = run_event_related_MI(EEG,SignalA,SignalP,Epochs,fP_bins,fP,fA_bins
     end
     
     %% -------------------- CALCULATE MODULATION INDEX -----------------------------
+    % based on Tort et al., J Neurophysiol 2010
     for i = 1:length(fP)
         tmpP = Phase(i,:,:);
         for j = 1:length(fA)
@@ -70,6 +71,7 @@ function [] = run_event_related_MI(EEG,SignalA,SignalP,Epochs,fP_bins,fP,fA_bins
         end
     end
     
+    %% -------------------- STATISTICS -----------------------------
     if plotWithMask
         MX = squeeze(max(max(surrogates,[],2),[],3));
         thresh = prctile(MX,pMI);
