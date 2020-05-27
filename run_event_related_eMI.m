@@ -148,8 +148,8 @@ function [] = run_event_related_eMI(EEG,Epochs,HighFreqSignal,Maxes,LowFreq,fP_b
             end
         end
         
-        fileID = fopen([dirOut 'v' ID '_eMI_WARNINGS.txt'],'w');
-        couplingOrigins = determineOrigins(averageSpectrum,spectrumOfAverage,comodulogram,fSpectrum,fA,fP,mask,w,EEG.srate,Epochs(epoch),fileID);
+        fileID = fopen([dirOut 'v' ID '_eMI_WARNINGS.txt'],'a');
+        couplingOrigins = determineOrigins(averageSpectrum,spectrumOfAverage,comodulogram,fSpectrum,fA,fP,mask,w,EEG.srate,[],fileID);
         fclose(fileID);
     end
         

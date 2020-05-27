@@ -27,7 +27,7 @@ function [] = run_continuous_eMI(EEG,Epochs,HighFreqSignal,Maxes,LowFreq,fP_bins
         phaseBins(b) = -pi+(b-1)*dPhi; 
     end
     
-    fileID = fopen([dirOut 'v' ID '_eMI_WARNINGS.txt'],'w');
+    fileID = fopen([dirOut 'v' ID '_eMI_WARNINGS.txt'],'a');
 
     for epoch = 1:length(Epochs)
  

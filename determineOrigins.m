@@ -48,7 +48,11 @@ function [CouplingOrigins] = determineOrigins(AverageSpectrum,SpectrumOfAverage,
                 if isempty(idMaxPAC) || (idMaxPAC+start(ss)-1)==1
                     CouplingOrigins(start(ss):stop(ss),fp) = 0;
                     if (idMaxPAC+start(ss)-1)==1
-                        txt = ['WARNING! Epoch ' num2str(epoch) ', fP = ' num2str(fP(fp)) ' Hz, fA = ' num2str(fA(1)) ' Hz: this coupling is too close to the lower amplitude frequency limit, thus it is labeled as Ambiguous. If you want to examine it, decrease the lower amplitude frequency limit.'];
+                        if ~isempty(epoch)
+                            txt = ['WARNING! Epoch ' num2str(epoch) ', fP = ' num2str(fP(fp)) ' Hz, fA = ' num2str(fA(1)) ' Hz: this coupling is too close to the lower amplitude frequency limit, thus it is labeled as Ambiguous. If you want to examine it, decrease the lower amplitude frequency limit.'];
+                        else
+                            txt = ['WARNING! fP = ' num2str(fP(fp)) ' Hz, fA = ' num2str(fA(1)) ' Hz: this coupling is too close to the lower amplitude frequency limit, thus it is labeled as Ambiguous. If you want to examine it, decrease the lower amplitude frequency limit.'];
+                        end
                         fprintf(fileID,[txt '\n'])
                         disp(txt)
                     end
@@ -157,7 +161,11 @@ function [CouplingOrigins] = determineOrigins(AverageSpectrum,SpectrumOfAverage,
                             fa2 = max(fA(sum(L==idB(ib),2)>0));
                             if origBs==0 && originsHarmonic==1
                                 CouplingOrigins(L==idB(ib)) = 0;
-                                txt = ['WARNING! Epoch ' num2str(epoch) ', fP = <' num2str(fp1) ', ' num2str(fp2) '> Hz, fA = <' num2str(fa1) ', ' num2str(fa2) '> Hz: this coupling region appears to be a harmonic of an Ambiguous coupling, thus it is also labeled as Ambiguous.'];
+                                if ~isempty(epoch)
+                                    txt = ['WARNING! Epoch ' num2str(epoch) ', fP = <' num2str(fp1) ', ' num2str(fp2) '> Hz, fA = <' num2str(fa1) ', ' num2str(fa2) '> Hz: this coupling region appears to be a harmonic of an Ambiguous coupling, thus it is also labeled as Ambiguous.'];
+                                else
+                                    txt = ['WARNING! fP = <' num2str(fp1) ', ' num2str(fp2) '> Hz, fA = <' num2str(fa1) ', ' num2str(fa2) '> Hz: this coupling region appears to be a harmonic of an Ambiguous coupling, thus it is also labeled as Ambiguous.'];
+                                end
                                 fprintf(fileID,[txt '\n'])
                                 disp(txt)
                             end
@@ -171,7 +179,11 @@ function [CouplingOrigins] = determineOrigins(AverageSpectrum,SpectrumOfAverage,
                             fa2 = max(fA(sum(L==idB(ib),2)>0));
                             if originsB==0 && originsHarmonic==1
                                 CouplingOrigins(L==idB(ib)) = 0;
-                                txt = ['WARNING! Epoch ' num2str(epoch) ', fP = <' num2str(fp1) ', ' num2str(fp2) '> Hz, fA = <' num2str(fa1) ', ' num2str(fa2) '> Hz: this coupling region appears to be a harmonic of an Ambiguous coupling, thus it is also labeled as Ambiguous.'];
+                                if ~isempty(epoch)
+                                    txt = ['WARNING! Epoch ' num2str(epoch) ', fP = <' num2str(fp1) ', ' num2str(fp2) '> Hz, fA = <' num2str(fa1) ', ' num2str(fa2) '> Hz: this coupling region appears to be a harmonic of an Ambiguous coupling, thus it is also labeled as Ambiguous.'];
+                                else
+                                    txt = ['WARNING! fP = <' num2str(fp1) ', ' num2str(fp2) '> Hz, fA = <' num2str(fa1) ', ' num2str(fa2) '> Hz: this coupling region appears to be a harmonic of an Ambiguous coupling, thus it is also labeled as Ambiguous.'];
+                                end
                                 fprintf(fileID,[txt '\n'])
                                 disp(txt)      
                             end
