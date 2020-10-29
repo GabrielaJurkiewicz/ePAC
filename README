@@ -57,4 +57,4 @@ This software for now consists of three functionalities:
 
 There are exemplary programs (Test_properPAC.m, Test_epiphenomenalPAC.m, Test_properPAC_inVivo.m) and datasets (Test_properPAC_1.set, Test_properPAC_2.set, Test_properPAC_inVivo.set, Test_epiphenomenalPAC_1a.set, Test_epiphenomenalPAC_1b.set, Test_epiphenomenalPAC_2a.set, Test_epiphenomenalPAC_2b.set) that show the results for artificial and in vivo data. More information on those examples inside exemplary scripts.
 
-More information about methods included in toolbox could be find in article .......
+More information about methods included in toolbox could be find in article: Jurkiewicz G. J., Hunt M. J., Zygierewicz J., "Addressing pitfalls in phase-amplitude coupling analysis with an extended Modulation Index toolbox", Neuroinformatics, 2020, doi:10.1007/s12021-020-09487-3
